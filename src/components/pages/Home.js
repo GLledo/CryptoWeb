@@ -4,15 +4,14 @@ import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
 
 import { useGetCryptosQuery } from '../../services/cryptoApi'
-import Title from 'antd/lib/skeleton/Title'
+import { CryptoCurrencies, News} from './index'
 
 function Home() {
 
-    const {data, isFetching } = useGetCryptosQuery();
+    const {data, isFetching } = useGetCryptosQuery(10);
     const globalStats = data?.data?.stats
-    console.log(data)
 
-    if(isFetching) return 'Cargando....'
+    if(isFetching) return 'Loading'
 
     return (
         <>
@@ -26,8 +25,15 @@ function Home() {
                 <Col span={12}><Statistic title="Total Markets" value={millify(globalStats.totalMarkets)} /></Col>
             </Row>
             <div className="home-heading-container">
-                <Title level={2} className="home-tittle"></Title>
+                <Typography.Title level={2} className="home-tittle">Top 10 Cryptocurrencies</Typography.Title>
+                <Typography.Title level={3} className="show-more"><Link to="/cryptocurrencies">Show more</Link></Typography.Title>
             </div>
+            <CryptoCurrencies simplified />
+            <div className="home-heading-container">
+                <Typography.Title level={2} className="home-tittle">Crypto news</Typography.Title>
+                <Typography.Title level={3} className="show-more"><Link to="/news">Show more</Link></Typography.Title>
+            </div>
+            <News simplified />
         </>
     )
 }
