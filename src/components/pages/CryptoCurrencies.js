@@ -17,9 +17,6 @@ const CryptoCurrencies = ({simplified}) => {
         setCryptos(filteredData)
     }, [cryptoList, searchTerm])
 
-    console.log(count)
-    console.log(simplified)
-
     if (isFetching) return "Loading"
 
     return (
