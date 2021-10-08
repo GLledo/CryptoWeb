@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
- 
-
-const createRequest = (url) => ({ url, headers: cryptoApiHeaders })
+//claves
 
 export const cryptoNewsApi = createApi({
     reducerPath: 'cryptoNewsApi',

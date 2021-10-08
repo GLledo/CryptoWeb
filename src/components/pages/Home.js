@@ -13,6 +13,8 @@ function Home() {
 
     if(isFetching) return 'Loading'
 
+    //console.log(`Prueba de .env ${process.env.REACT_APP}`)
+
     return (
         <>
             <Typography.Title level={2} className="heading">Global Crypto Stats</Typography.Title>

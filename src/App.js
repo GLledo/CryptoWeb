@@ -34,7 +34,7 @@ const App = () => {
                 </Layout>
                 <div className="footer" >
                 <Typography.Title level={5} style={{ color: 'white' , textAlign: 'center'}} >
-                    Cryto Web <br />
+                    Cryto Web &copy; {new Date().getFullYear()}<br />
                     All rights reserverd
                 </Typography.Title>
                 <Space>
